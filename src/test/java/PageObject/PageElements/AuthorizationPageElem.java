@@ -7,5 +7,4 @@ public class AuthorizationPageElem {
     public static SelenideElement passwordLane = $x("//label[text()='ароль']//following-sibling::input");
     public static SelenideElement loginButton = $x("//input[@class='aui-button aui-button-primary']");
     public static SelenideElement welcomeJira = $x("//img[@class='intro-logo']//following-sibling::h3");
-
 }
