@@ -18,5 +18,10 @@ public class CreatNewTaskElem {
     public static SelenideElement doneButton = $x("//span[text()='Выполнено']");
     public static SelenideElement idTask = $x("//a[@class='issue-link']");
     public static SelenideElement statusTask = $x("//span[@id='status-val']//child::span");
+    public static SelenideElement fixInVersionV2 = $x("//label[text()='Исправить в версиях']//parent::div//child::option[contains(text(),'Version 2.0')]");
+    public static SelenideElement textAreaEnvironment = $x("//textarea[@id='environment']");
+    public static SelenideElement appointMeButton = $x("//button[text()='Назначить меня']");
+    public static SelenideElement priorityField = $x("//input[@aria-label='Приоритет']");
+
 
 }

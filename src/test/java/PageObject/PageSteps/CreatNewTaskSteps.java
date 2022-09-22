@@ -30,11 +30,16 @@ public class CreatNewTaskSteps {
         creatThema.sendKeys("Test Task");
         textButton.click();
         textAreaDescription.sendKeys("Описание тестовой задачи");
+        fixInVersionV2.click();
+        priorityField.click();
+        priorityField.sendKeys("High");
+        textAreaEnvironment.sendKeys("Google Chrome v. 105.0.5195.127");
+        appointMeButton.click();
         creatButton.click();
         statusTask.shouldHave(Condition.text("Сделать"));
-        System.out.println("Создана задача: " + idTask.getText());
         inWorkButton.click();
         statusTask.shouldHave(Condition.text("В работе"));
+        System.out.println("Создана задача: " + idTask.getText());
         businessProcessButton.click();
         doneButton.click();
         statusTask.shouldHave(Condition.text("Готово"));
