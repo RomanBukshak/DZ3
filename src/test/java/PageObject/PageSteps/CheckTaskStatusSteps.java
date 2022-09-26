@@ -3,25 +3,18 @@ package PageObject.PageSteps;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
-import static PageObject.PageElements.AuthorizationPageElem.*;
 import static PageObject.PageElements.LoggedPageElem.projectTest;
 import static PageObject.PageElements.LoggedPageElem.projectsDropButton;
 import static PageObject.PageElements.TestProjectPageElem.*;
-import static PageObject.PageSteps.AuthorizationSteps.openUrl;
+import static PageObject.PageSteps.AuthorizationSteps.authorization;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static utils.Configuration.getConfigurationValue;
 
 public class CheckTaskStatusSteps {
 
     @Step("Проверка статуса задачи и привязки в затронутой версии")
     public static void checkTaskStatus() {
-        openUrl(getConfigurationValue("jiraUrl"));
-        loginLane.shouldBe(Condition.visible).click();
-        loginLane.sendKeys(getConfigurationValue("login"));
-        passwordLane.click();
-        passwordLane.sendKeys(getConfigurationValue("password"));
-        loginButton.click();
+        authorization();
         projectsDropButton.shouldBe(Condition.visible).click();
         projectTest.click();
         taskList.shouldBe(visible).click();
